@@ -3,8 +3,30 @@
   <head>
     <title>Blog</title>
     <meta charset="utf-8">
+    <!-- STYLESHEETS -->
+    <!-- materialize -->
+    <link href="materialize-css/dist/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+    <!-- custom styles -->
+    <link href="static/css/style.css" rel="stylesheet" type="text/css"/>
   </head>
   <body>
-    <h4>someday this will maybe be a blog built with mongodb and node. for now im tired so im gonna take a nap.</h4>
+    <div class="container">
+      <h1>Blog</h1>
+      <form>
+        <input type="text" name="title" placeholder="title">
+        <input type="text" name="body" placeholder="body">
+        <input type="submit" name="send" value="Submit">
+      </form>
+      <h3>Posts</h3>
+    </div>
+      <!-- MVC:
+        use (vue) REACT/angular to display data queried in controller
+        from mongo db
+      -->
   </body>
+  <!--
+    need to include scripts
+    controller, materialize, jquery, react/angular/vue
+  -->
+
 </html>

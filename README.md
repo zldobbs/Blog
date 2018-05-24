@@ -12,7 +12,9 @@ little to no experience in will be explored, including but not limited to:
 
 ## Personal Notes
 Specific to my implementation of this application. Temporary, but I will refer
-to these for the time being.
+to these for the time being. If you are not me reading this, chances are
+these will be irrelevant to you since the mongo server is not included within
+the repo.
 
 ### Launching local mongo server
 Might be a much easier method, but until you wanna look into it:

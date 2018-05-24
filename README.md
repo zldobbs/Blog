@@ -16,6 +16,10 @@ to these for the time being. If you are not me reading this, chances are
 these will be irrelevant to you since the mongo server is not included within
 the repo.
 
+### Launching node server
+* Navigate to project dir
+* `node main.js`
+
 ### Launching local mongo server
 Might be a much easier method, but until you wanna look into it:
 

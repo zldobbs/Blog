@@ -60,7 +60,6 @@ DB.prototype.findAll = function(coll) {
     database.collection(coll).find({}).toArray()
     .then(
       function(results) {
-        // return the results
         resolve(results);
       },
       function(err) {

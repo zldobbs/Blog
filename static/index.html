@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <meta charset="utf-8">
+    <!-- STYLESHEETS -->
+    <!-- materialize -->
+    <link href="materialize-css/dist/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+    <!-- custom styles -->
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <h1>Blog</h1>
+        <form>
+          <input id="title-txt" type="text" name="title" placeholder="title">
+          <input id="body-txt" type="text" name="body" placeholder="body">
+          <input id="add-btn" class="btn right" type="submit" name="send" value="Submit">
+        </form>
+        <h3>Posts</h3>
+        <ul id="post-list">
+        </ul>
+      </div>
+      <!-- SCRIPTS -->
+      <!-- jquery -->
+      <script src="jquery/dist/jquery.min.js"></script>
+      <!-- materialize js -->
+      <script src="materialize-css/dist/js/materialize.min.js"></script>
+      <!-- conroller -->
+      <script src="scripts/controller.js"></script>
+    </main>
+  </body>
+</html>

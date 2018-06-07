@@ -1,6 +1,7 @@
 /*
   Blogging Application
   Zachary Dobbs -- 2018
+  TODO: video 4, 18:00 - just finished testing authentication post requests
 */
 
 // initialize app

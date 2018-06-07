@@ -72,8 +72,8 @@ router.post('/authenticate', function(req, res, next) {
 });
 
 // registration
-router.get('/profile', function(req, res, next) {
-  res.send('PROFILE'); // replace w/ file
+router.get('/profile', passport.authenticate('jwt', { session : false }), function(req, res, next) {
+  res.json({ user : req.user });
 });
 
 module.exports = router;

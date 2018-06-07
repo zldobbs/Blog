@@ -1,0 +1,17 @@
+<nav>
+  <div class="blue nav-wrapper">
+    <a href="#" class="brand-logo">TGP</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li id="home-nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact : true }">
+            <a [routerLink]="['/']">home</a>
+      </li>
+      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact : true }">
+            <a [routerLink]="['/login']">login</a>
+      </li>
+      <!-- TODO: make login/register one page... 'Sign Up!' from login -->
+      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact : true }">
+            <a [routerLink]="['/register']">register</a>
+      </li>
+    </ul>
+  </div>
+</nav>

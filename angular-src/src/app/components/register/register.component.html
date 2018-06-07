@@ -1,0 +1,46 @@
+<div class="row">
+  <h2 class="col s6 m3 push-m3">register</h2>
+  <form ng-submit="onRegisterSubmit()" class="col s12">
+    <!-- FIXME: difficult to click the actual inputs..? -->
+    <div class="row">
+      <div class="input-field col s12 m6 push-m3">
+        <input type="text" ng-model="name" class="validate">
+        <!--
+          NOTE: intentionally not required,
+                if a user chooses not to provide a name, they will be
+                known as `Anonymous`
+        -->
+        <label for="name">name</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m6 push-m3">
+        <input ng-model="email" type="email" class="validate" required>
+        <label for="email">email address</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m6 push-m3">
+        <input ng-model="username" type="text" class="validate" required>
+        <label for="username">username</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m6 push-m3">
+        <input ng-model="password" type="password" class="validate" required>
+        <label for="name">password</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m6 push-m3">
+        <input type="password" class="validate" required>
+        <label for="name">confirm password</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m6 push-m3 white-text">
+        <input type="submit" value="register" class="btn waves-effect" required>
+      </div>
+    </div>
+  </form>
+</div>

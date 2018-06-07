@@ -1,7 +1,10 @@
 /*
-  Blogging Application
+  *Blogging Application
   Zachary Dobbs -- 2018
-  TODO: video 4, 18:00 - just finished testing authentication post requests
+  TODO: update node_modules, shouldn't get jquery or materialize here...
+        get them for the angular app. this is purely backend work here
+        package.json should be updated followed by a cleanup build
+  NOTE: left off at p6 ~5min
 */
 
 // initialize app
@@ -37,14 +40,8 @@ require('./config/passport')(passport);
 const users = require('./routes/users');
 
 app.use(express.static(path.join(__dirname, '/node_modules')));
-app.use(express.static(path.join(__dirname, '/static')));
+app.use(express.static(path.join(__dirname, '/public')));
 app.use('/users', users);
-
-// handle routing to home
-app.get('/', function(req, res) {
-  console.log('connected to page');
-  res.sendFile(__dirname + 'static/views/index.html');
-});
 
 // serve the app
 http.listen(3000, function() {

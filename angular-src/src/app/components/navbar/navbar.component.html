@@ -5,12 +5,21 @@
       <li id="home-nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact : true }">
             <a [routerLink]="['/']">home</a>
       </li>
-      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact : true }">
+      <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact : true }">
             <a [routerLink]="['/login']">login</a>
       </li>
+      <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact : true }">
+            <a [routerLink]="['/dashboard']">dashboard</a>
+      </li>
+      <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact : true }">
+            <a [routerLink]="['/profile']">profile</a>
+      </li>
       <!-- TODO: make login/register one page... 'Sign Up!' from login -->
-      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact : true }">
+      <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact : true }">
             <a [routerLink]="['/register']">register</a>
+      </li>
+      <li *ngIf="authService.loggedIn()">
+            <a (click)="onLogoutClick()" href="#">logout</a>
       </li>
     </ul>
   </div>

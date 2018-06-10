@@ -1,10 +1,6 @@
 /*
   *Blogging Application
   Zachary Dobbs -- 2018
-  TODO: update node_modules, shouldn't get jquery or materialize here...
-        get them for the angular app. this is purely backend work here
-        package.json should be updated followed by a cleanup build
-  NOTE: left off at p6 ~5min
 */
 
 // initialize app
@@ -42,6 +38,8 @@ const users = require('./routes/users');
 app.use(express.static(path.join(__dirname, '/node_modules')));
 app.use(express.static(path.join(__dirname, '/public')));
 app.use('/users', users);
+
+// FIXME: add error-handling for bad URL requests 
 
 // serve the app
 http.listen(3000, function() {

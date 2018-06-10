@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MaterializeModule } from 'angular2-materialize';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -15,13 +16,14 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
 
 const appRoutes : Routes = [
   { path : '',             component : HomeComponent },
   { path : 'login',        component : LoginComponent },
   { path : 'register',     component : RegisterComponent },
-  { path : 'profile',      component : ProfileComponent },
-  { path : 'dashboard',    component : DashboardComponent }
+  { path : 'profile',      component : ProfileComponent,    canActivate : [AuthGuard] },
+  { path : 'dashboard',    component : DashboardComponent,  canActivate : [AuthGuard] }
 ];
 
 @NgModule({
@@ -39,11 +41,20 @@ const appRoutes : Routes = [
     RouterModule.forRoot(appRoutes),
     MaterializeModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    JwtModule.forRoot({
+      config: {
+        whitelistedDomains: ['localhost:3000'],
+        tokenGetter: function() {
+          return localStorage.getItem('id_token');
+        }
+      }
+    })
   ],
   providers: [
     ValidateService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

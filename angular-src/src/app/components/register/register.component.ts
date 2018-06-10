@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
       password: this.password
     }
 
-    // check required fields
+    // validate fields filled before registering
     if (!this.validateService.validateRegister(user)) {
       toast('Please fill out all fields', 5000, 'red');
       return false;
@@ -43,10 +43,11 @@ export class RegisterComponent implements OnInit {
       toast('Please provide a valid email', 5000, 'red');
       return false;
     }
+    // send the registration info to the backend
     const _this = this;
     this.authService.registerUser(user).subscribe(function(data) {
       if (data.succ) {
-        toast('You are now registered!', 5000, 'green lighten-3');
+        toast('You are now registered!', 5000, 'green');
         _this.router.navigate(['/login']);
       }
       else {

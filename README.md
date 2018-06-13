@@ -1,7 +1,11 @@
-# MEAN
-mean (mongo, express, angular, node) application under development
+# MEAN Auth
+Mean (Mongo, Express, Angular, Node) application under development
 
-at this point the project serves as a complete authentication template for a mean application.
+At this point the project serves as a complete authentication template for a mean application.
+
+### TODO:
+
+Make this repo into a viable API. Remove the the superficial build code.
 
 ### Launching node server
 * Navigate to project dir
